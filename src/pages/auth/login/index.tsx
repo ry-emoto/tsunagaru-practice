@@ -6,13 +6,11 @@ const login = () => {
       <div>
         <div>
           <button onClick={() => signIn('github', { callbackUrl: '/' })}>
-            GitHub
+            Sign in with GitHub
           </button>
         </div>
         <div>
-          <button onClick={() => signIn('google', { callbackUrl: '/' })}>
-            Google
-          </button>
+          <button onClick={() => signIn()}>Sign in with Google</button>
         </div>
       </div>
       <p>or</p>
