@@ -3,7 +3,7 @@ import NextAuth from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
-// import prisma from '../../../lib/prisma';
+import prisma from '../../../lib/prisma';
 // import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
 const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options);
@@ -22,7 +22,7 @@ const options = {
     CredentialsProvider({
       name: 'Credential',
       async authorize() {
-        const user = { name: 'ゲストユーザー', email: 'guest@example.com' };
+        const user = { id: '', name: 'Guest User', email: 'guest@example.com' };
         if (user) {
           return user;
         } else {
@@ -32,9 +32,31 @@ const options = {
       credentials: {},
     }),
   ],
-  // adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
   pages: {
-    signIn: '/auth/login',
+    signIn: '/login',
   },
+
+  callbacks: {
+    async session({ session }: any) {
+      const user = await prisma.user.findUnique({
+        where: {
+          email: session.user.email,
+        },
+      });
+      session.user.id = user?.id;
+      return session;
+    },
+  },
+  events: {
+    signIn: async ({ user }: any) => {
+      await prisma.user.create({
+        data: {
+          name: user.name,
+          email: user.email,
+        },
+      });
+    },
+  },
+  // adapter: PrismaAdapter(prisma),
 };

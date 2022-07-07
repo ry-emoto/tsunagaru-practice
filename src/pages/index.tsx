@@ -1,16 +1,15 @@
-import type { NextPage } from 'next';
-import { signOut, useSession } from 'next-auth/react';
+import { NextPage } from 'next';
+import { Typography } from '@mui/material';
+import CommonMenu from '../components/common/CommonMenu';
+import Home from '../components/home/Home';
 
-const Home: NextPage = () => {
-  const session = useSession();
+const index: NextPage = () => {
   return (
-    <div>
-      <p>{`こんにちは、${session.data?.user?.name}さん`}</p>
-      <button onClick={() => signOut()}>
-        <a>Log out</a>
-      </button>
-    </div>
+    <CommonMenu>
+      <Typography sx={{ mb: '10px' }}>ホーム</Typography>
+      <Home />
+    </CommonMenu>
   );
 };
 
-export default Home;
+export default index;

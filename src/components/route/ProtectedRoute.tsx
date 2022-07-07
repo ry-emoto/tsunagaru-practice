@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   // もしも、status が 「unauthenticated」だった場合、ログイン画面へのリダイレクトが行われます
   useEffect(() => {
     if (status === 'unauthenticated') {
-      router.push('/auth/login');
+      router.push('/login');
     }
   }, [router, status]);
 

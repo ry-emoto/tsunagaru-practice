@@ -17,7 +17,7 @@ const AuthWrapper = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      {['/auth/login'].includes(router.pathname) ? (
+      {['/login'].includes(router.pathname) ? (
         // もしも、現在のページが、ログインを要求するページだった場合
         // ログイン状況に応じて、ページを表示するか or ログイン画面へリダイレクトさせるかを判定します
         children
