@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { signOut, useSession } from 'next-auth/react';
 import NextLink from 'next/link';
 import MuiLink from '@mui/material/Link';
-import stringToColor from '../../utils/stringToColor';
+import stringToColor from '../../lib/stringToColor';
 import AppBar from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';

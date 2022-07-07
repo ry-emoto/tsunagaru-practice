@@ -23,7 +23,7 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import SettingsIcon from '@mui/icons-material/Settings';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import stringToColor from '../../utils/stringToColor';
+import stringToColor from '../../lib/stringToColor';
 
 const menuList = [
   { name: 'ホーム', link: '/', icon: <HomeIcon />, description: '内容検討中' },

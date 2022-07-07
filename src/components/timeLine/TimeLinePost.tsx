@@ -1,5 +1,5 @@
 import React from 'react';
-import stringToColor from '../../utils/stringToColor';
+import stringToColor from '../../lib/stringToColor';
 import {
   ListItem,
   ListItemButton,

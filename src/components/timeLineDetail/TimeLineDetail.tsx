@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import TimeLinePost from '../timeLine/TimeLinePost';
 import React from 'react';
-import stringToColor from '../../utils/stringToColor';
+import stringToColor from '../../lib/stringToColor';
 import { useRouter } from 'next/router';
 
 const TimeLineDetail = () => {

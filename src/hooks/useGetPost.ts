@@ -1,6 +1,5 @@
 import useSWR from 'swr';
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import fetcher from '../lib/fetcher';
 
 const useGetPost = (url: string) => {
   const { data, error } = useSWR(url, fetcher);
