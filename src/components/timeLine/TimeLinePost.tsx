@@ -20,6 +20,7 @@ type Props = {
 
 const TimeLinePost = (props: Props) => {
   const router = useRouter();
+  const path = router.pathname.split('/')[1];
   return (
     <>
       {props.post ? (
@@ -40,7 +41,7 @@ const TimeLinePost = (props: Props) => {
           <Stack width='100%'>
             <ListItemButton
               sx={{ m: 0, p: 0 }}
-              onClick={() => router.push(`/timeLine/${props.post.id}`)}
+              onClick={() => router.push(`/${path}/${props.post.id}`)}
             >
               <ListItemText
                 sx={{ whiteSpace: 'pre-line' }}

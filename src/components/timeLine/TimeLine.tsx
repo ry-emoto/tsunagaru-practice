@@ -2,11 +2,19 @@ import { SyntheticEvent, useState } from 'react';
 import { Box, Card, Tab, Stack } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import TimeLinePostWrap from './TimeLinePostWrap';
-import useGetPost from '../../hooks/useGetPost';
 
-const TimeLine = () => {
+type Props = {
+  data: any;
+  load: any;
+  err: any;
+};
+
+const TimeLine = (props: Props) => {
+  const allPosts = props.data;
+  const postsLoading = props.load;
+  const postsError = props.err;
+
   const [value, setValue] = useState('1');
-  const { posts: allPosts, postsLoading, postsError } = useGetPost('/api/post');
   const sharePosts = allPosts?.filter((post: any) => post.type === '共有');
   const qaPosts = allPosts?.filter((post: any) => post.type === 'Q&A');
   const suggestionPosts = allPosts?.filter((post: any) => post.type === '提案');

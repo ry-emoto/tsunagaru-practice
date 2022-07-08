@@ -13,10 +13,11 @@ const index = (props: Props) => {
     '/api/post',
     props.fallbackData
   );
+  const targetPost = posts?.filter((post: any) => post.user_id === 1);
 
   return (
     <CommonMenu>
-      <TimeLine data={posts} load={postsLoading} err={postsError} />
+      <TimeLine data={targetPost} load={postsLoading} err={postsError} />
     </CommonMenu>
   );
 };

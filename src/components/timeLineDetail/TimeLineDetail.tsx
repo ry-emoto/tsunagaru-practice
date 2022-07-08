@@ -1,4 +1,3 @@
-import useGetPost from '../../hooks/useGetPost';
 import {
   Avatar,
   Box,
@@ -15,12 +14,18 @@ import {
 import TimeLinePost from '../timeLine/TimeLinePost';
 import React from 'react';
 import stringToColor from '../../lib/stringToColor';
-import { useRouter } from 'next/router';
 
-const TimeLineDetail = () => {
-  const postId = useRouter().query.id;
-  const { posts, postsLoading, postsError } = useGetPost('/api/post');
-  const post = posts?.find((data: any) => data.id === Number(postId));
+type Props = {
+  data: any;
+  load: any;
+  err: any;
+};
+
+const TimeLineDetail = (props: Props) => {
+  const post = props.data;
+  const postsLoading = props.load;
+  const postsError = props.err;
+
   const sortComments = post?.comment?.reduceRight(
     (p: any, c: any) => [...p, c],
     []

@@ -14,9 +14,14 @@ const index = (props: Props) => {
     props.fallbackData
   );
 
+  const targetPost = posts?.filter(
+    (post: any) =>
+      post.bookmark?.filter((book: any) => book.user_id === 1).length > 0
+  );
+
   return (
     <CommonMenu>
-      <TimeLine data={posts} load={postsLoading} err={postsError} />
+      <TimeLine data={targetPost} load={postsLoading} err={postsError} />
     </CommonMenu>
   );
 };
