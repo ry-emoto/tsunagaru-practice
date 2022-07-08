@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import stringToColor from '../../lib/stringToColor';
 import {
   Avatar,
   Box,
@@ -21,9 +22,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
-import SettingsIcon from '@mui/icons-material/Settings';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import stringToColor from '../../lib/stringToColor';
 
 const menuList = [
   { name: 'ホーム', link: '/', icon: <HomeIcon />, description: '内容検討中' },
@@ -50,12 +49,6 @@ const menuList = [
     link: '/search',
     icon: <ManageSearchIcon />,
     description: '投稿を検索するメニュー',
-  },
-  {
-    name: '設定',
-    link: '/setting',
-    icon: <SettingsIcon />,
-    description: '内容検討中',
   },
 ];
 

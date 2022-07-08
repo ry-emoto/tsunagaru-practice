@@ -67,7 +67,7 @@ const CommonMenu = (props: { children?: any; window?: any }) => {
         }}
       >
         <Toolbar variant='dense' />
-        <Box maxWidth='1300px' sx={{ m: 'auto' }}>
+        <Box maxWidth='1000px' sx={{ m: 'auto' }}>
           {props.children}
         </Box>
       </Box>
