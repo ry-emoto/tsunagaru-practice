@@ -1,3 +1,6 @@
+import React from 'react';
+import TimeLinePost from '../timeLine/TimeLinePost';
+import stringToColor from '../../lib/stringToColor';
 import {
   Avatar,
   Box,
@@ -11,9 +14,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import TimeLinePost from '../timeLine/TimeLinePost';
-import React from 'react';
-import stringToColor from '../../lib/stringToColor';
+import FormatTime from '../../lib/formatTime';
 
 type Props = {
   data: any;
@@ -67,7 +68,9 @@ const TimeLineDetail = (props: Props) => {
                           <ListItemText
                             sx={{ whiteSpace: 'pre-line' }}
                             primary={comment.comment}
-                            secondary={comment.created_at}
+                            secondary={
+                              <FormatTime dateString={comment.created_at} />
+                            }
                           />
                         </ListItem>
                         <Divider variant='fullWidth' component='li' />

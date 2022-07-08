@@ -1,5 +1,6 @@
 import React from 'react';
 import stringToColor from '../../lib/stringToColor';
+import FormatTime from '../../lib/formatTime';
 import {
   ListItem,
   ListItemButton,
@@ -51,7 +52,7 @@ const TimeLinePost = (props: Props) => {
                     {props.post?.content}
                   </>
                 }
-                secondary={<>{props.post.created_at}</>}
+                secondary={<FormatTime dateString={props.post.created_at} />}
               />
             </ListItemButton>
             <Stack
