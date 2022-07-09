@@ -9,6 +9,7 @@ import {
   Stack,
   Avatar,
   Tooltip,
+  Chip,
 } from '@mui/material';
 import FavoriteBtn from './FavoriteBtn';
 import BookmarkBtn from './BookmarkBtn';
@@ -48,7 +49,12 @@ const TimeLinePost = (props: Props) => {
                 sx={{ whiteSpace: 'pre-line' }}
                 primary={
                   <>
-                    [{props.post?.type}]<br />
+                    <Chip
+                      label={props.post?.type}
+                      variant='outlined'
+                      size='small'
+                    />
+                    <br />
                     {props.post?.content}
                   </>
                 }
