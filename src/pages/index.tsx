@@ -2,8 +2,10 @@ import { GetServerSideProps } from 'next';
 import CommonMenu from '../components/common/CommonMenu';
 import prisma from '../lib/prisma';
 import Home from '../components/home/Home';
+import { getSession } from 'next-auth/react';
 
 type Props = {
+  user: any;
   users: any;
 };
 
@@ -18,24 +20,34 @@ const index = (props: Props) => {
 
   return (
     <CommonMenu>
-      <Home users={sortUsers} />
+      <Home user={props.user} users={sortUsers} />
     </CommonMenu>
   );
 };
 
 export default index;
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const data = await prisma.user.findMany({
+export const getServerSideProps: GetServerSideProps = async ({ req }: any) => {
+  const session = await getSession({ req });
+  const userData = await prisma.user.findUnique({
+    where: { id: session?.user.id },
     include: {
       _count: {
         select: { post: true, like: true, bookmark: true, comment: true },
       },
     },
   });
+  const user = JSON.parse(JSON.stringify(userData));
 
-  const users = JSON.parse(JSON.stringify(data));
+  const usersData = await prisma.user.findMany({
+    include: {
+      _count: {
+        select: { post: true, like: true, bookmark: true, comment: true },
+      },
+    },
+  });
+  const users = JSON.parse(JSON.stringify(usersData));
   return {
-    props: { users },
+    props: { user, users },
   };
 };

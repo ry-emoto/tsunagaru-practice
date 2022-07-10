@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Chip,
   Divider,
   List,
   ListItem,
@@ -44,10 +45,18 @@ const Lanking = (props: Props) => {
                 primary={<>{user.name}</>}
                 secondary={
                   <>
-                    <Typography>
-                      投稿数：{user._count.post} | コメント：
-                      {user._count.comment} | いいね：{user._count.like}
-                    </Typography>
+                    <Chip
+                      label={`投稿:${user._count.post}`}
+                      variant='outlined'
+                    />
+                    <Chip
+                      label={`コメント:${user._count.comment}`}
+                      variant='outlined'
+                    />
+                    <Chip
+                      label={`いいね:${user._count.like}`}
+                      variant='outlined'
+                    />
                   </>
                 }
               />

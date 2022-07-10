@@ -2,8 +2,10 @@ import { SyntheticEvent, useState } from 'react';
 import { Box, Card, Tab, Stack } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import Lanking from './Lanking';
+import Mission from './Mission';
 
 type Props = {
+  user: any;
   users: any;
 };
 
@@ -32,7 +34,9 @@ const Home = (props: Props) => {
             <TabPanel value='1'>
               <Lanking users={props.users} />
             </TabPanel>
-            <TabPanel value='2'>2</TabPanel>
+            <TabPanel value='2'>
+              <Mission user={props.user} />
+            </TabPanel>
           </Box>
         </TabContext>
       </Box>
