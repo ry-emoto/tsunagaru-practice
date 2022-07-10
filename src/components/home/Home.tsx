@@ -3,6 +3,8 @@ import { Box, Card, Tab, Stack } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import Lanking from './Lanking';
 import Mission from './Mission';
+import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
+import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 
 type Props = {
   user: any;
@@ -26,8 +28,12 @@ const Home = (props: Props) => {
             }}
           >
             <TabList onChange={handleChange} centered>
-              <Tab label='ランキング' value='1' />
-              <Tab label='ミッション' value='2' />
+              <Tab
+                icon={<EmojiEventsOutlinedIcon />}
+                label='ランキング'
+                value='1'
+              />
+              <Tab icon={<FlagOutlinedIcon />} label='ミッション' value='2' />
             </TabList>
           </Box>
           <Box>
