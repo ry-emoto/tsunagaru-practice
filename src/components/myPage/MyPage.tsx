@@ -12,7 +12,7 @@ type Props = {
 const MyPage = (props: Props) => {
   return (
     <Card component={Stack} alignItems='center' sx={{ p: '10px', m: 'auto' }}>
-      <Stack sx={{ width: '100%', p: '30px' }} spacing={4}>
+      <Stack sx={{ width: '100%', p: '50px' }} spacing={4}>
         {/* acount */}
         <Stack direction='row' alignItems='center' spacing={2}>
           <Avatar
