@@ -13,6 +13,7 @@ import { Avatar, Menu, MenuItem, Stack } from '@mui/material';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import { useRouter } from 'next/router';
 
 type Props = {
   handleDrawerToggle: any;
@@ -22,6 +23,7 @@ const TopBar = (props: Props) => {
   const [anchorElUser, setAnchorElUser] = useState(null);
   const { data: session } = useSession();
   const userName = session?.user?.name;
+  const router = useRouter();
 
   const handleOpenUserMenu = (event: any) => {
     setAnchorElUser(event.currentTarget);
@@ -114,7 +116,7 @@ const TopBar = (props: Props) => {
           open={Boolean(anchorElUser)}
           onClose={handleCloseUserMenu}
         >
-          <MenuItem>
+          <MenuItem onClick={() => router.push('/myPage')}>
             <Typography textAlign='center'>Profile</Typography>
           </MenuItem>
           <MenuItem onClick={() => signOut()}>

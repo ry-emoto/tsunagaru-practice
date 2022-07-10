@@ -68,11 +68,13 @@ const SideBar = () => {
         <Toolbar variant='dense' />
         <Divider />
 
-        <Stack
+        <Button
+          component={Stack}
           justifyContent='center'
           alignItems='center'
           spacing={1}
-          sx={{ py: '20px' }}
+          sx={{ py: '20px', width: '100%', textTransform: 'none' }}
+          onClick={() => router.push('/myPage')}
         >
           {userName && (
             <>
@@ -82,7 +84,7 @@ const SideBar = () => {
               <Typography>{userName}</Typography>
             </>
           )}
-        </Stack>
+        </Button>
         <Divider />
 
         <List>
