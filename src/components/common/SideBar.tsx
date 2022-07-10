@@ -27,22 +27,22 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 const menuList = [
   { name: 'ホーム', link: '/', icon: <HomeIcon />, description: '内容検討中' },
   {
-    name: 'タイムライン',
-    link: '/timeLine',
+    name: '全ての投稿',
+    link: '/allPost',
     icon: <ListAltIcon />,
     description: '全ての投稿を表示するメニュー',
+  },
+  {
+    name: '自分の投稿',
+    link: '/myPost',
+    icon: <ContactPageIcon />,
+    description: '私の投稿を表示するメニュー',
   },
   {
     name: 'ブックマーク',
     link: '/bookmark',
     icon: <BookmarkBorderIcon />,
     description: 'ブックマークした投稿を表示するメニュー',
-  },
-  {
-    name: 'マイページ',
-    link: '/myPage',
-    icon: <ContactPageIcon />,
-    description: '私の投稿を表示するメニュー',
   },
   {
     name: '検索',
