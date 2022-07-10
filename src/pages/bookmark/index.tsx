@@ -3,12 +3,14 @@ import fetcher from '../../lib/fetcher';
 import CommonMenu from '../../components/common/CommonMenu';
 import TimeLine from '../../components/timeLine/TimeLine';
 import useGetPost from '../../hooks/useGetPost';
+import { useSession } from 'next-auth/react';
 
 type Props = {
   fallbackData: any;
 };
 
 const index = (props: Props) => {
+  const { data: session } = useSession();
   const { posts, postsLoading, postsError } = useGetPost(
     '/api/post',
     props.fallbackData
@@ -16,7 +18,8 @@ const index = (props: Props) => {
 
   const targetPost = posts?.filter(
     (post: any) =>
-      post.bookmark?.filter((book: any) => book.user_id === 1).length > 0
+      post.bookmark?.filter((book: any) => book.user_id === session?.user.id)
+        .length > 0
   );
 
   return (
