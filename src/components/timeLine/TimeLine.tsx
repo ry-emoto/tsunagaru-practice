@@ -2,6 +2,9 @@ import { SyntheticEvent, useState } from 'react';
 import { Box, Card, Tab, Stack } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import TimeLinePostWrap from './TimeLinePostWrap';
+import ShareIcon from '@mui/icons-material/Share';
+import PanToolOutlinedIcon from '@mui/icons-material/PanToolOutlined';
+import NotListedLocationOutlinedIcon from '@mui/icons-material/NotListedLocationOutlined';
 
 type Props = {
   data: any;
@@ -35,9 +38,21 @@ const TimeLine = (props: Props) => {
           >
             <TabList onChange={handleChange} centered>
               <Tab label={`All(${allPosts?.length})`} value='1' />
-              <Tab label={`共有(${sharePosts?.length})`} value='2' />
-              <Tab label={`Q&A(${qaPosts?.length})`} value='3' />
-              <Tab label={`提案(${suggestionPosts?.length})`} value='4' />
+              <Tab
+                icon={<ShareIcon />}
+                label={`共有(${sharePosts?.length})`}
+                value='2'
+              />
+              <Tab
+                icon={<NotListedLocationOutlinedIcon />}
+                label={`Q&A(${qaPosts?.length})`}
+                value='3'
+              />
+              <Tab
+                icon={<PanToolOutlinedIcon />}
+                label={`提案(${suggestionPosts?.length})`}
+                value='4'
+              />
             </TabList>
           </Box>
           <Box>
