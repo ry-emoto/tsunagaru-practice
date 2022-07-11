@@ -45,9 +45,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 
   const data = await fetcher(`${API_URL}/api/post`);
+  const post = JSON.parse(JSON.stringify(data));
+
   return {
     props: {
-      fallbackData: data,
+      fallbackData: post,
     },
   };
 };
