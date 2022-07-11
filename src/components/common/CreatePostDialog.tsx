@@ -94,6 +94,7 @@ const CreatePostDialog = (props: any) => {
             size='small'
             multiline
             rows={5}
+            required
             inputRef={content}
           />
         </DialogContent>
