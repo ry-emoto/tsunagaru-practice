@@ -14,7 +14,7 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import FormatTime from '../../lib/formatTime';
+import FormatDate from '../../lib/FormatDate';
 
 type Props = {
   data: any;
@@ -69,7 +69,7 @@ const TimeLineDetail = (props: Props) => {
                             sx={{ whiteSpace: 'pre-line' }}
                             primary={comment.comment}
                             secondary={
-                              <FormatTime dateString={comment.created_at} />
+                              <FormatDate dateString={comment.created_at} />
                             }
                           />
                         </ListItem>

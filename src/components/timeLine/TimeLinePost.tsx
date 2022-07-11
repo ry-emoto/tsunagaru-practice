@@ -1,6 +1,5 @@
 import React from 'react';
 import stringToColor from '../../lib/stringToColor';
-import FormatTime from '../../lib/formatTime';
 import {
   ListItem,
   ListItemButton,
@@ -15,6 +14,7 @@ import FavoriteBtn from './FavoriteBtn';
 import BookmarkBtn from './BookmarkBtn';
 import CommentBtn from './CommentBtn';
 import { useRouter } from 'next/router';
+import FormatDate from '../../lib/FormatDate';
 
 type Props = {
   post: any;
@@ -58,7 +58,7 @@ const TimeLinePost = (props: Props) => {
                     {props.post?.content}
                   </>
                 }
-                secondary={<FormatTime dateString={props.post.created_at} />}
+                secondary={<FormatDate dateString={props.post.created_at} />}
               />
             </ListItemButton>
             <Stack

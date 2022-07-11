@@ -4,7 +4,7 @@ import { Paper } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import FormatTime from '../../lib/formatTime';
+import FormatDate from '../../lib/FormatDate';
 
 type Props = {
   data: any;
@@ -51,7 +51,7 @@ const Search = (props: Props) => {
     {
       field: 'created_at',
       headerName: '投稿日',
-      renderCell: (params) => <FormatTime dateString={params.value} />,
+      renderCell: (params) => <FormatDate dateString={params.value} />,
       width: 160,
     },
   ];
