@@ -4,11 +4,11 @@ type Props = {
   dateString: any;
 };
 
-const formatTime = (props: Props) => {
+const FormatTime = (props: Props) => {
   const date = parseISO(props.dateString);
   return (
     <time dateTime={props.dateString}>{format(date, 'yyyy/MM/dd HH:mm')}</time>
   );
 };
 
-export default formatTime;
+export default FormatTime;
