@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
 import fetcher from '../../lib/fetcher';
 import CommonMenu from '../../components/common/CommonMenu';
@@ -18,9 +19,15 @@ const index = (props: Props) => {
   const post = posts?.find((data: any) => data.id === Number(postId));
 
   return (
-    <CommonMenu>
-      <TimeLineDetail data={post} load={postsLoading} err={postsError} />
-    </CommonMenu>
+    <>
+      <NextSeo
+        title='投稿詳細|Tsunagaru'
+        description='Tsunagaru投稿詳細ページ'
+      />
+      <CommonMenu>
+        <TimeLineDetail data={post} load={postsLoading} err={postsError} />
+      </CommonMenu>
+    </>
   );
 };
 

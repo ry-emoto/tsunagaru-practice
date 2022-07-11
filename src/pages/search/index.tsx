@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { GetStaticProps } from 'next';
 import fetcher from '../../lib/fetcher';
 import CommonMenu from '../../components/common/CommonMenu';
@@ -15,9 +16,12 @@ const index = (props: Props) => {
   );
 
   return (
-    <CommonMenu>
-      <Search data={posts} load={postsLoading} err={postsError} />
-    </CommonMenu>
+    <>
+      <NextSeo title='検索|Tsunagaru' description='Tsunagaru検索ページ' />
+      <CommonMenu>
+        <Search data={posts} load={postsLoading} err={postsError} />
+      </CommonMenu>
+    </>
   );
 };
 

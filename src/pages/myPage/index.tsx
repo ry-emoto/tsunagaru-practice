@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
 import CommonMenu from '../../components/common/CommonMenu';
 import MyPage from '../../components/myPage/MyPage';
@@ -10,9 +11,12 @@ type Props = {
 
 const index = (props: Props) => {
   return (
-    <CommonMenu>
-      <MyPage user={props.user} />
-    </CommonMenu>
+    <>
+      <NextSeo title='マイページ|Tsunagaru' description='Tsunagaruマイページ' />
+      <CommonMenu>
+        <MyPage user={props.user} />
+      </CommonMenu>
+    </>
   );
 };
 

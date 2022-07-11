@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
 import CommonMenu from '../components/common/CommonMenu';
 import prisma from '../lib/prisma';
@@ -19,9 +20,12 @@ const index = (props: Props) => {
   });
 
   return (
-    <CommonMenu>
-      <Home user={props.user} users={sortUsers} />
-    </CommonMenu>
+    <>
+      <NextSeo title='ホーム|Tsunagaru' description='Tsunagaruホームページ' />
+      <CommonMenu>
+        <Home user={props.user} users={sortUsers} />
+      </CommonMenu>
+    </>
   );
 };
 

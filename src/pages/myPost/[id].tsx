@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { GetServerSideProps } from 'next';
 import fetcher from '../../lib/fetcher';
 import CommonMenu from '../../components/common/CommonMenu';

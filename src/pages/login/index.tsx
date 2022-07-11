@@ -6,7 +6,7 @@ const index = () => {
     <>
       <NextSeo
         title='ログイン|Tsunagaru'
-        description='Tsunagaruのログインページです。'
+        description='Tsunagaruログインページ'
       />
       <Login />
     </>
