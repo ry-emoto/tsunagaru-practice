@@ -18,8 +18,16 @@ const index = (props: Props) => {
 
 export default index;
 
-export const getServerSideProps: GetServerSideProps = async ({ req }: any) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  req,
+  res,
+}: any) => {
   const session = await getSession({ req });
+  if (!session) {
+    res.statusCode = 403;
+    return { props: { user: null, users: null } };
+  }
+
   const data = await prisma.user.findUnique({
     where: { id: session?.user.id },
     include: {
