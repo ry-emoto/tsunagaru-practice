@@ -34,7 +34,7 @@ const index = (props: Props) => {
 export default index;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const API_URL = process.env.API_URL_ROOT;
+  const API_URL = process.env.NEXTAUTH_URL;
 
   if (typeof API_URL === 'undefined') {
     return {
