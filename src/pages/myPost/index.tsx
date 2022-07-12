@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
   if (typeof API_URL === 'undefined') {
     return {
       props: {
-        fallbackData: undefined,
+        fallbackData: null,
       },
     };
   }

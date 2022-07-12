@@ -39,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   if (typeof API_URL === 'undefined') {
     return {
       props: {
-        fallbackData: undefined,
+        fallbackData: null,
       },
     };
   }
