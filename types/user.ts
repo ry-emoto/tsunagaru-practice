@@ -1,14 +1,13 @@
 import { Bookmark } from './bookmark';
 import { Comment } from './comment';
 import { Like } from './like';
-import { User } from './user';
+import { Post } from './post';
 
-export type Post = {
+export type User = {
   id: number;
-  type: string;
-  content: string;
-  user_id: number;
-  user: User;
+  name: string;
+  email: string;
+  post: Post[];
   like: Like[];
   bookmark: Bookmark[];
   comment: Comment[];

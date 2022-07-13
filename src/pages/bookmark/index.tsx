@@ -5,6 +5,8 @@ import CommonMenu from '../../components/common/CommonMenu';
 import TimeLine from '../../components/timeLine/TimeLine';
 import useGetPost from '../../hooks/useGetPost';
 import { useSession } from 'next-auth/react';
+import { Post } from '../../../types/post';
+import { Bookmark } from '../../../types/bookmark';
 
 type Props = {
   fallbackData: any;
@@ -18,9 +20,10 @@ const index = (props: Props) => {
   );
 
   const targetPost = posts?.filter(
-    (post: any) =>
-      post.bookmark?.filter((book: any) => book.user_id === session?.user.id)
-        .length > 0
+    (post: Post) =>
+      post.bookmark?.filter(
+        (book: Bookmark) => book.user_id === session?.user.id
+      ).length > 0
   );
 
   return (

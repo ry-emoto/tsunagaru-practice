@@ -5,6 +5,7 @@ import CommonMenu from '../../components/common/CommonMenu';
 import TimeLine from '../../components/timeLine/TimeLine';
 import useGetPost from '../../hooks/useGetPost';
 import { useSession } from 'next-auth/react';
+import { Post } from '../../../types/post';
 
 type Props = {
   fallbackData: any;
@@ -17,7 +18,7 @@ const index = (props: Props) => {
     props.fallbackData
   );
   const targetPost = posts?.filter(
-    (post: any) => post.user_id === session?.user.id
+    (post: Post) => post.user_id === session?.user.id
   );
 
   return (

@@ -5,6 +5,7 @@ import CommonMenu from '../../components/common/CommonMenu';
 import useGetPost from '../../hooks/useGetPost';
 import TimeLineDetail from '../../components/timeLineDetail/TimeLineDetail';
 import { useRouter } from 'next/router';
+import { Post } from '../../../types/post';
 
 type Props = {
   fallbackData: any;
@@ -16,7 +17,7 @@ const index = (props: Props) => {
     '/api/post',
     props.fallbackData
   );
-  const post = posts?.find((data: any) => data.id === Number(postId));
+  const post = posts?.find((data: Post) => data.id === Number(postId));
 
   return (
     <>
