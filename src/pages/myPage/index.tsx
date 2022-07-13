@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   const session = await getSession({ req });
   if (!session) {
     res.statusCode = 403;
-    return { props: { user: null, users: null } };
+    return { props: { user: null } };
   }
 
   const data = await prisma.user.findUnique({

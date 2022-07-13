@@ -59,6 +59,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     },
   });
   const users = JSON.parse(JSON.stringify(usersData));
+
   return {
     props: { user, users },
   };
