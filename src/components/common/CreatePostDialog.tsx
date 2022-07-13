@@ -26,7 +26,12 @@ const typeList = [
   { id: 3, value: '提案' },
 ];
 
-const CreatePostDialog = (props: any) => {
+type Props = {
+  open: any;
+  setOpen: any;
+};
+
+const CreatePostDialog = (props: Props) => {
   const type = useRef<HTMLInputElement>(null);
   const content = useRef<HTMLInputElement>(null);
   const theme = useTheme();

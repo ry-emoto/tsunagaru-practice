@@ -15,9 +15,10 @@ import BookmarkBtn from './BookmarkBtn';
 import CommentBtn from './CommentBtn';
 import { useRouter } from 'next/router';
 import FormatDate from '../../lib/FormatDate';
+import { Post } from '../../../types/post';
 
 type Props = {
-  post: any;
+  post: Post;
 };
 
 const TimeLinePost = (props: Props) => {

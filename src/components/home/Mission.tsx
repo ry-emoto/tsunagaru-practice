@@ -13,9 +13,10 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
+import { User } from '../../../types/user';
 
 type Props = {
-  user: any;
+  user: User;
 };
 
 const Mission = (props: Props) => {
@@ -48,7 +49,7 @@ const Mission = (props: Props) => {
 
   return (
     <List>
-      {missionLists.map((list: any, index: any) => (
+      {missionLists.map((list: any, index: number) => (
         <React.Fragment key={index}>
           <ListItem alignItems='center'>
             <ListItemAvatar>

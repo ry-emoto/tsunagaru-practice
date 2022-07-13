@@ -1,9 +1,10 @@
 import React from 'react';
 import { List, Divider, Typography } from '@mui/material';
 import TimeLinePost from './TimeLinePost';
+import { Post } from '../../../types/post';
 
 type Props = {
-  posts: any;
+  posts: Post[];
   loading: any;
   error: any;
 };
@@ -18,7 +19,7 @@ const TimeLinePostWrap = (props: Props) => {
       ) : (
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
           {props.posts && props.posts.length > 0 ? (
-            props.posts.map((post: any) => (
+            props.posts.map((post: Post) => (
               <React.Fragment key={post.id}>
                 <TimeLinePost post={post} />
                 <Divider variant='fullWidth' component='li' />

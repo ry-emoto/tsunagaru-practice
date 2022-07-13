@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { Box, IconButton } from '@mui/material';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import CreateCommentDialog from './CreateCommentDialog';
+import { Post } from '../../../types/post';
 
 type Props = {
-  post: any;
+  post: Post;
 };
 
 const CommentBtn = (props: Props) => {

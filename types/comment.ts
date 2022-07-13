@@ -8,4 +8,6 @@ export type Comment = {
   post: Post;
   user_id: number;
   user: User;
+  created_at: string;
+  updated_at: string;
 };

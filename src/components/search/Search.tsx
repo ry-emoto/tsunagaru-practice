@@ -5,9 +5,10 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import FormatDate from '../../lib/FormatDate';
+import { Post } from '../../../types/post';
 
 type Props = {
-  data: any;
+  data: Post[];
   load: any;
   err: any;
 };

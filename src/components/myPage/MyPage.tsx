@@ -4,9 +4,10 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import stringToColor from '../../lib/stringToColor';
+import { User } from '../../../types/user';
 
 type Props = {
-  user: any;
+  user: User;
 };
 
 const MyPage = (props: Props) => {

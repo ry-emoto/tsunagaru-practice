@@ -15,9 +15,11 @@ import {
   Typography,
 } from '@mui/material';
 import FormatDate from '../../lib/FormatDate';
+import { Comment } from '../../../types/comment';
+import { Post } from '../../../types/post';
 
 type Props = {
-  data: any;
+  data: Post;
   load: any;
   err: any;
 };
@@ -49,7 +51,7 @@ const TimeLineDetail = (props: Props) => {
                 <Typography>{`コメント一覧（${sortComments?.length}件）`}</Typography>
                 <Card sx={{ p: '10px' }}>
                   <List>
-                    {sortComments.map((comment: any) => (
+                    {sortComments.map((comment: Comment) => (
                       <React.Fragment key={comment.id}>
                         <ListItem alignItems='flex-start'>
                           <ListItemAvatar>

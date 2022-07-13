@@ -5,9 +5,11 @@ import axios from 'axios';
 import { Box, IconButton } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { Post } from '../../../types/post';
+import { Like } from '../../../types/like';
 
 type Props = {
-  post: any;
+  post: Post;
 };
 
 const FavoriteBtn = (props: Props) => {
@@ -32,7 +34,7 @@ const FavoriteBtn = (props: Props) => {
   return (
     <Box>
       {props.post.like.find(
-        (like: any) => like.user_id === session?.user.id
+        (like: Like) => like.user_id === session?.user.id
       ) ? (
         <IconButton size='small' onClick={() => handleDelete(props.post.id)}>
           <FavoriteIcon fontSize='small' color='error' />

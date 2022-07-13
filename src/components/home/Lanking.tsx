@@ -11,16 +11,17 @@ import {
   Typography,
 } from '@mui/material';
 import React from 'react';
+import { User } from '../../../types/user';
 import stringToColor from '../../lib/stringToColor';
 
 type Props = {
-  users: any;
+  users: User[];
 };
 
 const Lanking = (props: Props) => {
   return (
     <List>
-      {props.users.map((user: any, index: any) => (
+      {props.users.map((user: User, index: number) => (
         <React.Fragment key={user.id}>
           <ListItem alignItems='center'>
             <Typography width='60px' fontWeight='bold'>

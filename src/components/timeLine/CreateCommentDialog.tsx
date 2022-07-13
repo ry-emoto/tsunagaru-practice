@@ -15,8 +15,15 @@ import {
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
+import { Post } from '../../../types/post';
 
-const CreateCommentDialog = (props: any) => {
+type Props = {
+  open: any;
+  setOpen: any;
+  post: Post;
+};
+
+const CreateCommentDialog = (props: Props) => {
   const content = useRef<HTMLInputElement>(null);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));

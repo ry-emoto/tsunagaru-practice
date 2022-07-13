@@ -5,10 +5,11 @@ import Lanking from './Lanking';
 import Mission from './Mission';
 import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
+import { User } from '../../../types/user';
 
 type Props = {
-  user: any;
-  users: any;
+  user: User;
+  users: User[];
 };
 
 const Home = (props: Props) => {

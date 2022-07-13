@@ -5,9 +5,10 @@ import TimeLinePostWrap from './TimeLinePostWrap';
 import ShareIcon from '@mui/icons-material/Share';
 import PanToolOutlinedIcon from '@mui/icons-material/PanToolOutlined';
 import NotListedLocationOutlinedIcon from '@mui/icons-material/NotListedLocationOutlined';
+import { Post } from '../../../types/post';
 
 type Props = {
-  data: any;
+  data: Post[];
   load: any;
   err: any;
 };
@@ -18,9 +19,11 @@ const TimeLine = (props: Props) => {
   const postsError = props.err;
 
   const [value, setValue] = useState('1');
-  const sharePosts = allPosts?.filter((post: any) => post.type === '共有');
-  const qaPosts = allPosts?.filter((post: any) => post.type === 'Q&A');
-  const suggestionPosts = allPosts?.filter((post: any) => post.type === '提案');
+  const sharePosts = allPosts?.filter((post: Post) => post.type === '共有');
+  const qaPosts = allPosts?.filter((post: Post) => post.type === 'Q&A');
+  const suggestionPosts = allPosts?.filter(
+    (post: Post) => post.type === '提案'
+  );
 
   const handleChange = (event: SyntheticEvent, newValue: string) => {
     setValue(newValue);

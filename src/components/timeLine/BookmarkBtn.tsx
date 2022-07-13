@@ -5,9 +5,11 @@ import axios from 'axios';
 import { Box, IconButton } from '@mui/material';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import { Bookmark } from '../../../types/bookmark';
+import { Post } from '../../../types/post';
 
 type Props = {
-  post: any;
+  post: Post;
 };
 
 const FavoriteBtn = (props: Props) => {
@@ -32,7 +34,7 @@ const FavoriteBtn = (props: Props) => {
   return (
     <Box>
       {props.post.bookmark.find(
-        (bookmark: any) => bookmark.user_id === session?.user.id
+        (bookmark: Bookmark) => bookmark.user_id === session?.user.id
       ) ? (
         <IconButton size='small' onClick={() => handleDelete(props.post.id)}>
           <BookmarkIcon fontSize='small' color='primary' />
