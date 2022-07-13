@@ -48,14 +48,20 @@ const Lanking = (props: Props) => {
                     <Chip
                       label={`投稿:${user._count.post}`}
                       variant='outlined'
+                      size='small'
+                      component='span'
                     />
                     <Chip
                       label={`コメント:${user._count.comment}`}
                       variant='outlined'
+                      size='small'
+                      component='span'
                     />
                     <Chip
                       label={`いいね:${user._count.like}`}
                       variant='outlined'
+                      size='small'
+                      component='span'
                     />
                   </>
                 }
